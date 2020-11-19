@@ -41,6 +41,7 @@ window.onhashchange = _ =>
     input.value = decodeURIComponent(location.hash.slice(1))
 
 form.onsubmit = event => {
+    details.open = false
     if (event)
         event.preventDefault()
     displayProgressBar()
