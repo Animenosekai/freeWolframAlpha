@@ -9,10 +9,14 @@
     </head>
     <body>
         <form id="form">
-            <input id="input" placeholder="Enter Expressions" style="width: 100%" autofocus>
+            <input id="input" placeholder="Enter Expressions" style="width: 100%">
             <input type="submit" value="Show Step-by-Step Solutions">
-            <a href="https://www.wolframalpha.com/examples/pro-features/step-by-step-solutions/"> Wolfram|Alpha </a>
+            <a href="https://www.wolframalpha.com/"> Wolfram|Alpha </a>
         </form>
+        <span id="progressBar" hidden>
+            Processing, please wait.
+            <progress> </progress>
+        </span>
         <details id="details" open>
             <summary> Examples </summary>
             <ul>
@@ -28,8 +32,8 @@
                 <li>     <a class="example"> Chemistry              </a>      </li>
             </ul>
         </details>
-        <div id="container"> </div>
-        <h1> Wol<a href="https://wolfreealpha.github.io">free</a>Alpha </h1>
+        <div id="pod"> </div>
+        <h1> Wol<a href="">free</a>Alpha </h1>
         Unlock/Receive FREE unlimited access to Wolfram|Alpha's full Step-by-step solutions.
         <a href="https://github.com/WolfreeAlpha/WolfreeAlpha.github.io"> GitHub </a>
         <script src="javascript.js"> </script>

@@ -1,6 +1,6 @@
 'use strict'
 
-var appid =
+const appid =
 [
 '26LQEH-YT3P6T3YY9',
 'K49A6Y-4REWHGRWW6',
@@ -16,65 +16,66 @@ var appid =
 '7JKH84-T648HW2UV9',
 'WYEQU3-2T55JP3WUG',
 'T2XT8W-57PJW3L433',
+'2557YT-52JEY65G9K',
 ]
 
-var corsProxy = 'https://lin2jing4-cors.herokuapp.com/'
+const corsProxy = 'https://lin2jing4-cors.herokuapp.com/'
 
-var displayProgressBar = _ =>
-    container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
-
-var fixedEncodeURIComponent = str => 
+const fixedEncodeURIComponent = str => 
     encodeURIComponent(str)
     .replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16))
 
-var url = _ =>
-`
-${corsProxy}
-http://api.wolframalpha.com/v2/query?
-&appid=${ appid[Date.now() % appid.length] }
-&input=${ location.hash = fixedEncodeURIComponent(input.value) }
-&podstate=Step-by-step solution
-&podstate=Step-by-step
-&podstate=Show all steps
-&scantimeout=20
-`
-
-window.onhashchange = _ =>
+window.onhashchange = _ => {
+    input.focus()
     input.value = decodeURIComponent(location.hash.slice(1))
+}
 
-form.onsubmit = event => {
+window.onhashchange()
+
+form.onsubmit = async event => {
     details.open = false
     if (event)
         event.preventDefault()
-    displayProgressBar()
-    fetch(
-        url()
-    ).then(
-        xml => xml.text()
-    ).then(
-        xml => container.innerHTML = xml.replace(/plaintext/g, 'pre')
-                                        .replace(/<pod title../g, '<h1>')
-                                        .replace(/.......scanner/gs, '</h1><!')
-    )
+    progressBar.hidden = false
+    const url =
+    `
+        ${corsProxy} api.wolframalpha.com/v2/query?
+        &appid = ${appid[Date.now() % appid.length]}
+        &input = ${location.hash = fixedEncodeURIComponent(input.value)}
+        &podstate = Step-by-step+solution
+        &podstate = Step-by-step
+        &podstate = Show+all+steps
+        &scantimeout = 20
+    `
+    const response = await fetch(url.replace(/ /g, ''))
+    const xml = await response.text()
+    pod.innerHTML = xml.replace(/plaintext/g, 'pre')
+                       .replace(/<pod title../g, '<h1>')
+                       .replace(/.......scanner/gs, '</h1><!')
+    progressBar.hidden = true
 }
 
-if (window.onhashchange())
+if (input.value)
     form.onsubmit()
 
-var browseEexamples = category => {
-    displayProgressBar()
-    fetch(
-        `${corsProxy}https://www4c.wolframalpha.com/examples/StepByStep${category.replace(/ /g, '')}-content.html`
-    ).then(
-        html => html.text()
-    ).then(
-        html => container.innerHTML = html.replace(/.input.*?&amp;lk=3/g, href => href
-                                          .replace(/.input..../, 'http://wolfreealpha.github.io#')
-                                          .replace(/&amp;lk=3/, '')
-                                          .replace(/\+/g, ' '))
-    )
-}
-
-document.querySelectorAll('.example').forEach(example =>
-    example.href = `javascript:browseEexamples( '${example.innerText}' )`
+document.querySelectorAll('.example').forEach(
+    example => {
+        example.href = ''
+        example.onclick = async event => {
+            event.preventDefault()
+            progressBar.hidden = false
+            const url =
+            `
+                ${corsProxy} wolframalpha.com/examples/
+                StepByStep ${event.target.innerText} -content.html
+            `
+            const response = await fetch(url.replace(/ /g, ''))
+            const html = await response.text()
+            pod.innerHTML = html.replace(/".*?"/g, href => href
+                                .replace(/.input..../, '#')
+                                .replace(/&amp;..../, '')
+                                .replace(/\+/g, ' '))
+            progressBar.hidden = true
+        }
+    }
 )
