@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> WolfreeAlpha: FREE Wolfram|Alpha Step-by-Step Solutions </title>
+        <title id="title">Wolfram|Alpha</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Compute answers using Wolfram's breakthrough technology &amp; knowledgebase, relied on by millions of students &amp; professionals. For math, science, nutrition, history, geography, engineering, mathematics, linguistics, sports, finance, music…">
         <meta property="og:title" content="WolfreeAlpha: FREE Wolfram|Alpha Step-by-Step Solutions">
         <meta property="og:image" content="https://www.wolframalpha.com/_next/static/images/headerSmall_14ipXg3E.png">
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <script src="main.js"></script>
     </head>
     <body>
-        <form id="form">
-            <input id="input" placeholder="Enter Expressions" style="width: 100%">
-            <input type="submit" value="Show Step-by-Step Solutions">
-            <a href="https://www.wolframalpha.com/"> Wolfram|Alpha </a>
-        </form>
+        <div class="_1NMGv"><a href="https://www.wolframalpha.com/" class="_10um4 _2LJkH krBQN _2dgCA"><img src="https://wolframalpha.com/_next/static/images/Logo_1tof6SJC.svg" alt="WolframAlpha computational knowledge AI" class="_3XkhH"></a>
+            <div class="_1YsE2">
+                <section class="_1YaPZ">
+                    <form id="equationForm" class="gqU8h _3-WTd">
+                        <div class="_2PAdq">
+                            <div class="_2c0ZL">
+                                <span id="inputOutput" class="_9CcbX"></span>
+                                <input style="width:52px" value="" class="_2oXzi" id="equationInput" onkeyup="addInput()" placeholder="Enter what you want to calculate or know about">
+                            </div>
+                        </div>
+                        <button type="submit" aria-label="Compute" class="_10um4 _2DVTv HuMWM">
+                            <svg class="_3Sdyu" viewBox="0 0 24 24">
+                                <path class="_1tPJM" d="M19 2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3zm-2 13H7v-2h10zm0-4H7V9h10z" fill="#fa6800"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </section>
+            </div>
+            <div class="b9R6n">
+              <ul class="_2Qj7y">
+                <li class="_1Qrw-"><button type="button" class="_10um4 _3fnRK _373wu"><svg class="_3Sdyu" viewBox="0 0 24 24">
+                      <path class="jzBOk" d="M9 21v-1.326l2.3-3.66-2.181-3.688V11h5.62v1.91h-3.154v.053l1.779 3.05-1.85 3.024v.053H15V21H9zm-5.118-2c-.362 0-.709-.079-.882-.126l.231-1.958c.145.047.318.063.52.063.723 0 .896-.474.896-1.926 0-2.464-.52-4.327-.52-7.042C4.127 5.72 4.618 4 7.118 4c.362 0 .709.079.882.126l-.231 1.958a1.697 1.697 0 0 0-.52-.063c-.723 0-.896.505-.896 1.926 0 2.464.52 4.327.52 7.042 0 2.29-.491 4.011-2.991 4.011zm12.85-10c-1.606 0-2.124-.89-2.124-2.203 0-.258.052-1.36.052-2.227h-1.204c0 1.313-.155 2.907-.323 4.407l-2.227-.118a21.78 21.78 0 0 0 .466-4.289H10v-1.5l.984-.07h6.99v1.57h-1.19c-.078.914-.078 2.133-.078 2.297 0 .399.207.516.57.516.129 0 .297-.024.465-.047L18 8.812c-.259.094-.738.188-1.269.188zm1.716 10C17.103 19 16 18.086 16 16.638c0-1.65 1.115-2.742 2.594-2.742.533 0 1.067.238 1.442.677v-.166c0-1.08-.266-1.769-1.188-1.769-.46 0-.824.178-1.2.522l-.884-1.258c.703-.57 1.43-.902 2.315-.902 2 0 2.921 1.353 2.921 3.347C22 17.172 20.521 19 18.448 19zm.337-2c.454 0 .957-.284 1.215-1.358-.27-.47-.638-.642-1.03-.642-.491 0-.97.247-.97 1.123 0 .618.38.877.785.877z"></path>
+                    </svg><span class="_1B-y0"><span>Extended Keyboard</span></span></button></li>
+                <li class="_1Qrw-"><button type="button" class="_10um4 _3fnRK _373wu"><svg class="_3Sdyu" viewBox="0 0 24 24">
+                      <path class="jzBOk" d="M10 16.296h4c.55 0 1-.45 1-1v-5h1.59c.89 0 1.34-1.08.71-1.71l-4.59-4.59a.996.996 0 0 0-1.41 0l-4.59 4.59c-.63.63-.19 1.71.7 1.71H9v5c0 .55.45 1 1 1zm-4 2h12c.55 0 1 .45 1 1s-.45 1-1 1H6c-.55 0-1-.45-1-1s.45-1 1-1z"></path>
+                    </svg><span class="_1B-y0"><span>Upload</span></span></button></li>
+              </ul>
+              <ul class="mPLZE">
+                <li class="_1Qrw-"><a href="https://www.wolframalpha.com/examples/" id="examples" class="_10um4 _3gsYZ _373wu"><svg class="_3Sdyu" viewBox="0 0 24 24">
+                      <path class="jzBOk" d="M6 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm6-12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm6-12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+                    </svg><span class="_1B-y0"><span>Examples</span></span></a></li>
+                <li class="_1Qrw-"><button id="random" type="button" class="_10um4 _3gsYZ _373wu"><svg class="_3Sdyu" viewBox="0 0 24 24">
+                      <path class="jzBOk" fill="#F96932" fill-rule="evenodd" d="M20.753 15.22c.33.293.33.767 0 1.06l-2.813 2.5c-.527.469-1.44.14-1.44-.53V17h-2.067a.448.448 0 0 1-.308-.12l-2.48-2.361 1.874-1.786 1.856 1.767H16.5v-1.25c0-.67.912-1 1.44-.53l2.813 2.5zM3.422 9.5C3.189 9.5 3 9.332 3 9.125v-1.75C3 7.168 3.189 7 3.422 7h3.895c.117 0 .228.043.308.12l2.48 2.362-1.874 1.785L6.375 9.5H3.422zm13.078 0h-1.125l-7.75 7.38a.448.448 0 0 1-.308.12H3.422C3.189 17 3 16.832 3 16.625v-1.75c0-.207.189-.375.422-.375h2.953l7.75-7.38a.448.448 0 0 1 .308-.12H16.5V5.75c0-.67.912-1 1.44-.53l2.813 2.5c.33.293.33.767 0 1.06l-2.813 2.5c-.527.469-1.44.14-1.44-.53V9.5z"></path>
+                    </svg><span class="_1B-y0"><span>Random</span></span></button></li>
+              </ul>
+            </div>
+          </div>
+          
+
         <span id="progressBar" hidden>
             Processing, please wait.
             <progress> </progress>
         </span>
-        <details id="details" open>
-            <summary> Examples </summary>
-            <ul>
-                <li>     <a class="example"> Arithmetic             </a>      </li>
-                <li>     <a class="example"> Algebra                </a>      </li>
-                <li>     <a class="example"> Geometry               </a>      </li>
-                <li>     <a class="example"> Statistics             </a>      </li>
-                <li> <b> <a class="example"> Calculus               </a> </b> </li>
-                <li> <b> <a class="example"> Differential Equations </a> </b> </li>
-                <li>     <a class="example"> Discrete Math          </a>      </li>
-                <li>     <a class="example"> Linear Algebra         </a>      </li>
-                <li>     <a class="example"> Proofs                 </a>      </li>
-                <li>     <a class="example"> Chemistry              </a>      </li>
-            </ul>
-        </details>
+
+<div class="_2oVR5">
         <div id="pod"> </div>
-        <h1> Wol<a href="">free</a>Alpha </h1>
-        Unlock/Receive FREE unlimited access to Wolfram|Alpha's full Step-by-step solutions.
-        <a href="https://github.com/WolfreeAlpha/WolfreeAlpha.github.io"> GitHub </a>
-        <script src="javascript.js"> </script>
+</div>
+
+        <a href="https://github.com/Animenosekai/WolfreeAlpha.github.io" style="color: black; text-decoration: none;">GitHub</a>
+    
+        <script src="javascript.js"></script>
+    
     </body>
 </html>
