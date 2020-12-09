@@ -36,7 +36,14 @@ function goHome() {
     .then(function(html) {
         document.getElementById('pod').innerHTML = html
     })
-    document.getElementById('footer').style.display = "none"
+    fetch(('/homeResponsive.html'))
+    .then(function(response) {
+        return response.text();
+    })
+    .then(function(html) {
+        document.getElementById('pod').innerHTML = document.getElementById('pod').innerHTML + html
+    })
+    document.getElementById('equationFooter').style.display = "none"
     title.innerText = "Wolfram|Alpha: Computational Intelligence"
 }
 
@@ -78,7 +85,7 @@ equationForm.onsubmit = async event => {
         pod.innerHTML = xml.replace(/plaintext/g, 'pre')
                         .replace(/<pod title../g, '<h2>')
                         .replace(/.......scanner/gs, '</h2><!')
-        document.getElementById('footer').style.display = "block"
+        document.getElementById('equationFooter').style.display = "block"
         Array.prototype.slice.call(document.getElementsByTagName('pre')).forEach(
             function(item) {
                 item.replaceWith(document.createElement("hr"))
@@ -112,7 +119,7 @@ function download() {
 
 window.onresize = function() {
     if (window.innerWidth <= 700) {
-        if (document.getElementById('extendedKeyboardTitle').getAttribute('keyboard-type') == 'normal') {
+        if (document.getElementById('extendedKeyboardContainer').getAttribute('keyboard-type') == 'normal') {
             fetch(('/extendedKeyboardResponsive.html'))
             .then(function(response) {
                 return response.text();
@@ -120,9 +127,20 @@ window.onresize = function() {
             .then(function(html) {
                 document.getElementById('extendedKeyboardContainer').innerHTML = html
             })
+            document.getElementById('extendedKeyboardContainer').setAttribute('keyboard-type', 'responsive')
+        }
+        if (document.getElementById('footerContainer').getAttribute('footer-type') == "normal") {
+            fetch(('/footerResponsive.html'))
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(html) {
+                document.getElementById('footerContainer').innerHTML = html
+            })
+            document.getElementById('footerContainer').setAttribute('footer-type', 'responsive')
         }
     } else {
-        if (document.getElementById('extendedKeyboardTitle').getAttribute('keyboard-type') == 'responsive') {
+        if (document.getElementById('extendedKeyboardContainer').getAttribute('keyboard-type') == 'responsive') {
             fetch(('/extendedKeyboard.html'))
             .then(function(response) {
                 return response.text();
@@ -130,6 +148,17 @@ window.onresize = function() {
             .then(function(html) {
                 document.getElementById('extendedKeyboardContainer').innerHTML = html
             })
+            document.getElementById('extendedKeyboardContainer').setAttribute('keyboard-type', 'normal')
+        }
+        if (document.getElementById('footerContainer').getAttribute('footer-type') == 'responsive') {
+            fetch(('/footer.html'))
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(html) {
+                document.getElementById('footerContainer').innerHTML = html
+            })
+            document.getElementById('footerContainer').setAttribute('footer-type', 'normal')
         }
     }
 }
@@ -143,14 +172,27 @@ window.onload = function() {
         .then(function(html) {
             document.getElementById('extendedKeyboardContainer').innerHTML = html
         })
-    } else {
-        fetch(('/extendedKeyboard.html'))
+        document.getElementById('extendedKeyboardContainer').setAttribute('keyboard-type', 'responsive')
+        fetch(('/footerResponsive.html'))
         .then(function(response) {
             return response.text();
         })
         .then(function(html) {
-            document.getElementById('extendedKeyboardContainer').innerHTML = html
+            document.getElementById('footerContainer').innerHTML = html
         })
+        document.getElementById('footerContainer').setAttribute('footer-type', 'responsive')
+        
+    } else {
+        document.getElementById('extendedKeyboardContainer').setAttribute('keyboard-type', 'normal')
+        fetch(('/footer.html'))
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(html) {
+            document.getElementById('footerContainer').innerHTML = html
+        })
+        document.getElementById('footerContainer').setAttribute('footer-type', 'normal')
+        
     }
 }
 

@@ -162,6 +162,8 @@ ul{list-style:none;}
 ._2ZoPo{height:38px;width:38px;}
 
 
+
+
 * {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
@@ -215,6 +217,21 @@ h2 {
     display: none;
 }
 
+#normalHomeGrid {
+    display: grid;
+}
+#responsiveHomeGrid {
+    display: none;
+}
+
+@media screen and (max-width: 1030px) {
+    #normalHomeGrid {
+        display: none;
+    }
+    #responsiveHomeGrid {
+        display: grid;
+    }
+}
 
 @media screen and (max-width: 585px) {
     .extraInputOption {
