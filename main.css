@@ -15,7 +15,6 @@
 /*! CSS Used from: https://www.wolframalpha.com/_next/static/css/styles.cde7e4da.chunk.css */
 div,span,a,img,ul,li,form,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;}
 div:not([data-focus-visible-added]),span:not([data-focus-visible-added]),a:not([data-focus-visible-added]),img:not([data-focus-visible-added]),ul:not([data-focus-visible-added]),li:not([data-focus-visible-added]),form:not([data-focus-visible-added]),section:not([data-focus-visible-added]){outline:none;}
-section{display:block;}
 ul{list-style:none;}
 input{-webkit-appearance:none;}
 /*! CSS Used from: https://www.wolframalpha.com/_next/static/css/81d6cf67b0e80aae788216cbed05e80cbda0f48d_CSS.f72afee3.chunk.css */
@@ -104,7 +103,6 @@ header{display:block;}
 /*! CSS Used from: https://www.wolframalpha.com/_next/static/css/styles.cde7e4da.chunk.css */
 div,h1,ul,li,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;}
 div:not([data-focus-visible-added]),h1:not([data-focus-visible-added]),ul:not([data-focus-visible-added]),li:not([data-focus-visible-added]),section:not([data-focus-visible-added]){outline:none;}
-section{display:block;}
 ul{list-style:none;}
 /*! CSS Used from: https://www.wolframalpha.com/_next/static/css/81d6cf67b0e80aae788216cbed05e80cbda0f48d_CSS.f72afee3.chunk.css */
 ._3F1W_{width:100%;padding:0 20px 20px;}
@@ -224,11 +222,24 @@ h2 {
     display: none;
 }
 
+.normalHomeGrid {
+    display: block;
+}
+.responsiveHomeGrid {
+    display: none;
+}
+
 @media screen and (max-width: 1030px) {
     #normalHomeGrid {
         display: none;
     }
     #responsiveHomeGrid {
+        display: block;
+    }
+    .normalHomeGrid {
+        display: none;
+    }
+    .responsiveHomeGrid {
         display: block;
     }
 }
