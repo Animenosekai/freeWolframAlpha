@@ -1,5 +1,8 @@
 'use strict'
 
+var xmlDownloadStore = ""
+var equationStore = ""
+
 const appid = [
     '26LQEH-YT3P6T3YY9',
     'K49A6Y-4REWHGRWW6',
@@ -24,10 +27,27 @@ const fixedEncodeURIComponent = str =>
     encodeURIComponent(str)
     .replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16))
 
+
+function goHome() {
+    fetch(('/home.html'))
+    .then(function(response) {
+        return response.text();
+    })
+    .then(function(html) {
+        document.getElementById('pod').innerHTML = html
+    })
+    document.getElementById('footer').style.display = "none"
+    title.innerText = "Wolfram|Alpha: Computational Intelligence"
+}
+
 window.onhashchange = _ => {
     equationInput.focus()
     equationInput.value = decodeURIComponent(location.hash.slice(1))
     document.getElementById("inputOutput").innerText = decodeURIComponent(location.hash.slice(1))
+    if (decodeURIComponent(location.hash.slice(1)).replace(" ", '') == "") {
+        document.getElementById("inputOutput").innerText = "Enter what you want to calculate or know about"
+        goHome()
+    }
 }
 
 window.onhashchange()
@@ -49,41 +69,100 @@ equationForm.onsubmit = async event => {
     `
     const response = await fetch(url.replace(/ /g, ''))
     const xml = await response.text()
-    pod.innerHTML = xml.replace(/plaintext/g, 'pre')
-                       .replace(/<pod title../g, '<h2>')
-                       .replace(/.......scanner/gs, '</h2><!')
-                       
-    Array.prototype.slice.call(document.getElementsByTagName('pre')).forEach(
-        function(item) {
-            item.replaceWith(document.createElement("hr"))
-            item.remove();
-            // or item.parentNode.removeChild(item); for older browsers (Edge-)
-        });
+    xmlDownloadStore = xml
+    equationStore = equationInput.value
     progressBar.hidden = true
-    title.innerText = equationInput.value + " - Wolfram|Alpha"
+    if (xmlDownloadStore.includes('input parameter not present in query')) {
+        goHome()
+    } else {
+        pod.innerHTML = xml.replace(/plaintext/g, 'pre')
+                        .replace(/<pod title../g, '<h2>')
+                        .replace(/.......scanner/gs, '</h2><!')
+        document.getElementById('footer').style.display = "block"
+        Array.prototype.slice.call(document.getElementsByTagName('pre')).forEach(
+            function(item) {
+                item.replaceWith(document.createElement("hr"))
+                item.remove();
+                // or item.parentNode.removeChild(item); for older browsers (Edge-)
+            });
+        pod.querySelector('h2').style.marginTop = "10px"
+        var HRs = pod.querySelectorAll('hr')
+        HRs[HRs.length - 1].remove()
+        title.innerText = equationInput.value + " - Wolfram|Alpha"
+    }
 }
 
 if (equationInput.value)
     equationForm.onsubmit()
 
-document.querySelectorAll('.example').forEach(
-    example => {
-        example.href = ''
-        example.onclick = async event => {
-            event.preventDefault()
-            progressBar.hidden = false
-            const url =
-            `
-                ${corsProxy} wolframalpha.com/examples/
-                StepByStep ${event.target.innerText} -content.html
-            `
-            const response = await fetch(url.replace(/ /g, ''))
-            const html = await response.text()
-            pod.innerHTML = html.replace(/".*?"/g, href => href
-                                .replace(/.input..../, '#')
-                                .replace(/&amp;..../, '')
-                                .replace(/\+/g, ' '))
-            progressBar.hidden = true
+
+function download() {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(xmlDownloadStore));
+    element.setAttribute('download', equationStore + " - Wolfram|Alpha Result.xml");
+    
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    
+    element.click();
+    
+    document.body.removeChild(element);
+}
+
+
+window.onresize = function() {
+    if (window.innerWidth <= 700) {
+        if (document.getElementById('extendedKeyboardTitle').getAttribute('keyboard-type') == 'normal') {
+            fetch(('/extendedKeyboardResponsive.html'))
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(html) {
+                document.getElementById('extendedKeyboardContainer').innerHTML = html
+            })
+        }
+    } else {
+        if (document.getElementById('extendedKeyboardTitle').getAttribute('keyboard-type') == 'responsive') {
+            fetch(('/extendedKeyboard.html'))
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(html) {
+                document.getElementById('extendedKeyboardContainer').innerHTML = html
+            })
         }
     }
-)
+}
+
+window.onload = function() {
+    if (window.innerWidth <= 700) {
+        fetch(('/extendedKeyboardResponsive.html'))
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(html) {
+            document.getElementById('extendedKeyboardContainer').innerHTML = html
+        })
+    } else {
+        fetch(('/extendedKeyboard.html'))
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(html) {
+            document.getElementById('extendedKeyboardContainer').innerHTML = html
+        })
+    }
+}
+
+function addSpecial(specialCharButton) {
+    equationInput.value = equationInput.value + specialCharButton.getAttribute("value")
+    document.getElementById("inputOutput").innerText = equationInput.value
+}
+
+
+function addInput() {
+    document.getElementById("inputOutput").innerText = document.getElementById("equationInput").value
+    if (equationInput.value.replace(" ", '') == "") {
+        document.getElementById("inputOutput").innerText = "Enter what you want to calculate or know about"
+    }
+}

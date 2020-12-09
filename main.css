@@ -1,111 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
-
-/*! CSS Used fontfaces */
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-400_9896f773628188b649ed5824fa363290.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-400_eb9f6abda4c68dfa0aba9f7960583797.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-ext-400_a4587c55c6ae93fa98ac293690d36763.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-400_6186d08baa099b1cdc26febbf29a294d.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-400_b26b9736dd93e179b9e73f55213adc05.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-400_20bc30027b525ee26ee2602967f1399b.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-400_f84cb1bf9be983133497000554605b4d.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-700_5b47e5e8e59c77f869583874b3d6579d.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-700_94a7a77a04f7e363bbb1eedec71e4f87.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-ext-700_7d700bdc1dd6d05a0118990751f4660e.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-700_2bc9b51e7d57ad97afaa747396ec2581.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-700_3bb832caa2e356300c4e824d5f55d9cb.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-700_435401e1b95bafca641bdfb6d9672313.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-700_3b38c16e4b39e5fd4017cd5055b0d505.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-italic-400_0c7593de09f337dd34a2382dc4914413.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-italic-400_13d4f044f8c7a1a26bc7c975c1f5f786.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-italic-ext-400_b8a2878a359cc0222995b1d5f93861f7.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-italic-400_291e002d84a8b7d9829eab2ffaf0655e.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-italic-400_0dc3aa5590b8a9325288a9acbbfc29ff.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-italic-400_2ab38ed30df61c0a1acb834db982f7b8.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-italic-400_4dcf65b9b1c120ed423d78ed3d9880c1.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-italic-700_e753a1d4ffc96fcb27df78fd12966593.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-italic-700_3e7b76461b53c00b2a59d788a1717ea3.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-ext-italic-700_cc834688bfdb6c0146de70d77b9fbef5.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-italic-700_371187497437cfcbd0d79983184def60.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-italic-700_471eaf129ea399bf94002b18e97eead3.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-italic-700_fe4af45f4086788248b1d68bedb104a9.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-italic-700_6d9c5fe65281e3034abe99931b7f0d85.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:300;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-300_9de7aa6abe9ec82f11a5f57b07669873.eot);src:local("Source Sans Pro Light"),local("SourceSansPro-Light"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-300_9de7aa6abe9ec82f11a5f57b07669873.eot#iefix) format("embedded-opentype"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-300_a8ae0d5401bb928346ea5696443d4909.woff2) format("woff2"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-300_ccdb76a033026dbdc3f08c50f4a5263f.woff) format("woff"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-300_6a9d4d28a117a8364376de2f17ee5ff9.ttf) format("truetype"),url(https://www.wolframalpha.com/_next/static/images/source-sans-pro-v9-latin-300_1b8feJKE.svg#SourceSansPro) format("svg");}
-@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-regular_f6fcf1b0a50cefee0e260d54c9065592.eot);src:local("Source Sans Pro"),local("SourceSansPro-Regular"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-regular_f6fcf1b0a50cefee0e260d54c9065592.eot#iefix) format("embedded-opentype"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-regular_58dd2a1c6d7861ea261912ba153ac8e3.woff2) format("woff2"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-regular_fdc0354668675e460e18d8e6b880e634.woff) format("woff"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-regular_f2d83436dcf3f53375518292e917643c.ttf) format("truetype"),url(https://www.wolframalpha.com/_next/static/images/source-sans-pro-v9-latin-regular_2YUsGsx-.svg#SourceSansPro) format("svg");}
-@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:600;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-600_7d33ed857c02ddedba37b8f3f07000e4.eot);src:local("Source Sans Pro Semibold"),local("SourceSansPro-Semibold"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-600_7d33ed857c02ddedba37b8f3f07000e4.eot#iefix) format("embedded-opentype"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-600_24f686ce4ae9498d22f10573cdaeb05d.woff2) format("woff2"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-600_e59c7c6c65e9c25fdaed924c5233f668.woff) format("woff"),url(https://www.wolframalpha.com/_next/static/chunks/fonts/source-sans-pro-v9-latin-600_39d8befcdcde91747d1b75ab6cadffbd.ttf) format("truetype"),url(https://www.wolframalpha.com/_next/static/images/source-sans-pro-v9-latin-600_3Q_zHelg.svg#SourceSansPro) format("svg");}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-400_9896f773628188b649ed5824fa363290.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-400_eb9f6abda4c68dfa0aba9f7960583797.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-ext-400_a4587c55c6ae93fa98ac293690d36763.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-400_6186d08baa099b1cdc26febbf29a294d.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-400_b26b9736dd93e179b9e73f55213adc05.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-400_20bc30027b525ee26ee2602967f1399b.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-400_f84cb1bf9be983133497000554605b4d.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-700_5b47e5e8e59c77f869583874b3d6579d.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-700_94a7a77a04f7e363bbb1eedec71e4f87.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-ext-700_7d700bdc1dd6d05a0118990751f4660e.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-700_2bc9b51e7d57ad97afaa747396ec2581.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-700_3bb832caa2e356300c4e824d5f55d9cb.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-700_435401e1b95bafca641bdfb6d9672313.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:normal;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-700_3b38c16e4b39e5fd4017cd5055b0d505.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-italic-400_0c7593de09f337dd34a2382dc4914413.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-italic-400_13d4f044f8c7a1a26bc7c975c1f5f786.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-italic-ext-400_b8a2878a359cc0222995b1d5f93861f7.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-italic-400_291e002d84a8b7d9829eab2ffaf0655e.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-italic-400_0dc3aa5590b8a9325288a9acbbfc29ff.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-italic-400_2ab38ed30df61c0a1acb834db982f7b8.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:400;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-italic-400_4dcf65b9b1c120ed423d78ed3d9880c1.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-ext-italic-700_e753a1d4ffc96fcb27df78fd12966593.woff2) format("woff2");unicode-range:U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-cyrillic-italic-700_3e7b76461b53c00b2a59d788a1717ea3.woff2) format("woff2");unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-ext-italic-700_cc834688bfdb6c0146de70d77b9fbef5.woff2) format("woff2");unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-greek-italic-700_371187497437cfcbd0d79983184def60.woff2) format("woff2");unicode-range:U+0370-03FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-vietnamese-italic-700_471eaf129ea399bf94002b18e97eead3.woff2) format("woff2");unicode-range:U+0102-0103, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-ext-italic-700_fe4af45f4086788248b1d68bedb104a9.woff2) format("woff2");unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'WebRoboto';font-style:italic;font-weight:700;src:url(https://www.wolframalpha.com/_next/static/chunks/fonts/roboto-latin-italic-700_6d9c5fe65281e3034abe99931b7f0d85.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
-
-
-* {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
-
-body {
-    background: #dedede33;
-}
-
-#pod {
-    background: white;
-    border-radius: 8px;
-    padding: 15px;
-    width: 70%;
-    margin-top: 50px;
-    margin-left: 15%;
-}
-
-hr {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 2;
-    color: #666;
-    opacity: 0.2;
-    text-shadow: 1px 1px 0px white;
-    margin: 20px 0px;
-    border: none;
-    border-bottom: 1px solid #666;
-    position: relative;
-    transition: box-shadow 200ms ease-in-out;
-    box-shadow: 0px 0px 0px 0px #f9f9f9;
-    /*width: 10.3125%;*/
-}
-
-
 /*! CSS Used from: https://www.wolframalpha.com/_next/static/css/commons.427cd909.chunk.css */
 ._10um4{text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;box-shadow:none;border:1px solid transparent;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-weight:inherit;font-size:inherit;text-decoration:none;box-sizing:border-box;margin:0;}
 ._10um4:not([data-focus-visible-added]){outline:none;}
 .krBQN{display:inline-flex;padding:1px 5px;border-radius:3px;align-items:center;}
 ._1B-y0{margin-left:5px;}
-._2LJkH{color:inherit;background-color:inherit;border-color:inherit;}
-._2LJkH:hover{color:inherit;background-color:inherit;border-color:inherit;}
-._2LJkH:active{color:inherit;border-color:inherit;outline:none;background:inherit;}
 ._2DVTv{color:#f36f21;background-color:rgba(0,0,0,0);border-color:rgba(0,0,0,0);}
 ._2DVTv ._1tPJM{fill:#f36f21;}
 ._2DVTv:hover{color:#db0004;background-color:rgba(0,0,0,0);border-color:rgba(0,0,0,0);}
@@ -157,9 +56,33 @@ input{-webkit-appearance:none;}
 ._1NMGv{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;padding:0 20px;}
 ._1YsE2{width:100%;max-width:780px;position:relative;}
 ._3-WTd{border:1px solid #ff9339;border-radius:4px;box-shadow:0 0 0 3px #ffc230;}
-
-
-
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/commons.427cd909.chunk.css */
+._10um4{text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;box-shadow:none;border:1px solid transparent;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-weight:inherit;font-size:inherit;text-decoration:none;box-sizing:border-box;margin:0;}
+._10um4:not([data-focus-visible-added]){outline:none;}
+.krBQN{display:inline-flex;padding:1px 5px;border-radius:3px;align-items:center;}
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/styles.cde7e4da.chunk.css */
+div,span,a{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;}
+div:not([data-focus-visible-added]),span:not([data-focus-visible-added]),a:not([data-focus-visible-added]){outline:none;}
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/e2fae5a39d4c692abec95978b00a0cac1f43b206_CSS.1a26ed27.chunk.css */
+._2LSg_{display:flex;}
+._3BX2Z,._5VPfe{border:none;font-size:12px;padding:10px;display:flex;align-items:flex-end;}
+._3BX2Z{color:#777;background-color:rgba(0,0,0,0);border-color:rgba(0,0,0,0);}
+._3BX2Z ._2MoRn{fill:#777;}
+._3BX2Z:hover{color:#ec561a;background-color:rgba(0,0,0,0);border-color:rgba(0,0,0,0);}
+._3BX2Z:hover ._2MoRn{fill:#ec561a;}
+._3BX2Z:active{color:#cb1000;border-color:rgba(0,0,0,0);outline:none;background:rgba(0,0,0,0);}
+._3BX2Z:active ._2MoRn{fill:#cb1000;}
+._1zLOS{width:16px;margin-right:5px;}
+._5YPtM{background:#f5f5f5;}
+._3l3lx,._2-WIS{font-family:WebRoboto,"Hiragino Kaku Gothic ProN","\30D2\30E9\30AE\30CE\89D2\30B4   ProN",Meiryo,メイリオ,Arial,Helvetica,sans-serif;line-height:20px;font-size:12px;}
+._3l3lx{color:#777;}
+._2-WIS{display:flex;justify-content:space-between;}
+._5VPfe{color:#777;background-color:rgba(0,0,0,0);border-color:rgba(0,0,0,0);display:flex;align-items:center;}
+._5VPfe:hover{color:#777;background-color:rgba(0,0,0,0);border-color:rgba(0,0,0,0);}
+._5VPfe:active{color:#777;border-color:rgba(0,0,0,0);outline:none;background:rgba(0,0,0,0);}
+._5VPfe:hover ._25kcj{color:#ec561a;}
+._5VPfe:active ._25kcj{color:#cb1000;}
+._25kcj{font-weight:bold;border:none;}
 /*! CSS Used from: https://www.wolframalpha.com/_next/static/css/styles.cde7e4da.chunk.css */
 h2,header{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;}
 h2:not([data-focus-visible-added]),header:not([data-focus-visible-added]){outline:none;}
@@ -170,7 +93,142 @@ header{display:block;}
 .pxQx2{color:#678e9c;margin-right:19px;}
 /*! CSS Used fontfaces */
 
+
+
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/commons.427cd909.chunk.css */
+._1oLFT{position:relative;display:inline-block;}
+._10um4{text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;box-shadow:none;border:1px solid transparent;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-weight:inherit;font-size:inherit;text-decoration:none;box-sizing:border-box;margin:0;}
+._10um4:not([data-focus-visible-added]){outline:none;}
+.krBQN{display:inline-flex;padding:1px 5px;border-radius:3px;align-items:center;}
+._3Sdyu{width:20px;height:20px;}
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/styles.cde7e4da.chunk.css */
+div,h1,ul,li,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;}
+div:not([data-focus-visible-added]),h1:not([data-focus-visible-added]),ul:not([data-focus-visible-added]),li:not([data-focus-visible-added]),section:not([data-focus-visible-added]){outline:none;}
+section{display:block;}
+ul{list-style:none;}
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/81d6cf67b0e80aae788216cbed05e80cbda0f48d_CSS.f72afee3.chunk.css */
+._3F1W_{width:100%;padding:0 20px 20px;}
+._2cA4H{display:block;text-align:left;width:100%;max-width:780px;margin:0 auto;}
+._2hVzI{display:grid;grid-template-columns:repeat(14, 1fr);}
+._3t0Vs{display:block;height:48px;width:auto;font-family:Lexia,"Roboto Slab",Georgia,"Times New Roman",Times,serif;font-size:16px;font-weight:300;line-height:48px;color:#7db4c9;}
+._31Yc9{font-size:12px;font-weight:normal;font-family:"Source Sans Pro",Arial,Helvetica,sans-serif;}
+._31Yc9:focus{z-index:1;}
+._31Yc9{margin:0 0 -1px -1px;}
+._3nGlG{position:relative;display:inline-block;margin:0;padding:0;border:1px solid;border-radius:0px;}
+._3nGlG:hover,._3nGlG:active{z-index:1;}
+._3nGlG{height:50px;width:100%;}
+._2WP2O{color:rgba(0,0,0,0);background-color:#fff;border-color:#ccc;}
+._2WP2O ._3ijoZ{fill:#777;}
+._2WP2O:hover{color:rgba(0,0,0,0);background-color:#fff;border-color:#ec561a;}
+._2WP2O:hover ._3ijoZ{fill:#777;}
+._2WP2O:active{color:rgba(0,0,0,0);border-color:#cb1000;outline:none;background:#ec561a;}
+._2WP2O:active ._3ijoZ{fill:#fff;}
+._2ZoPo{height:38px;width:38px;}
+._1s1Al{width:100vw;background:#f5f5f5;margin-top:-1px;}
+._1s1Al{border-top:solid 6px #c7c7c7;border-bottom:solid 6px #c7c7c7;}
+._13vNe{color:rgba(0,0,0,0);background-color:#ebebeb;border-color:rgba(0,0,0,0);}
+._13vNe ._3oIR7{fill:#ec561a;}
+._13vNe:hover{color:rgba(0,0,0,0);background-color:#f7f7f7;border-color:rgba(0,0,0,0);}
+._13vNe:hover ._3oIR7{fill:#ec561a;}
+._13vNe:active{color:rgba(0,0,0,0);border-color:rgba(0,0,0,0);outline:none;background:#f9f9f9;}
+._13vNe:active ._3oIR7{fill:#cb1000;}
+._3xlit{height:41px;width:100%;justify-content:center;}
+
+
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/commons.427cd909.chunk.css */
+._1oLFT{position:relative;display:inline-block;}
+._10um4{text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;box-shadow:none;border:1px solid transparent;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-weight:inherit;font-size:inherit;text-decoration:none;box-sizing:border-box;margin:0;}
+._10um4:not([data-focus-visible-added]){outline:none;}
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/styles.cde7e4da.chunk.css */
+div,h1,ul,li{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;}
+div:not([data-focus-visible-added]),h1:not([data-focus-visible-added]),ul:not([data-focus-visible-added]),li:not([data-focus-visible-added]){outline:none;}
+ul{list-style:none;}
+/*! CSS Used from: https://www.wolframalpha.com/_next/static/css/81d6cf67b0e80aae788216cbed05e80cbda0f48d_CSS.f72afee3.chunk.css */
+._2cA4H{display:block;text-align:left;width:100%;max-width:780px;margin:0 auto;}
+._7CC_P{display:grid;grid-template-columns:repeat(8, 1fr);}
+._3t0Vs{display:block;height:48px;width:auto;font-family:Lexia,"Roboto Slab",Georgia,"Times New Roman",Times,serif;font-size:16px;font-weight:300;line-height:48px;color:#7db4c9;}
+._31Yc9{font-size:12px;font-weight:normal;font-family:"Source Sans Pro",Arial,Helvetica,sans-serif;}
+._31Yc9:focus{z-index:1;}
+._31Yc9{margin:0 0 -1px -1px;}
+._3nGlG{position:relative;display:inline-block;margin:0;padding:0;border:1px solid;border-radius:0px;}
+._3nGlG:hover,._3nGlG:active{z-index:1;}
+._3nGlG{height:50px;width:100%;}
+._2WP2O{color:rgba(0,0,0,0);background-color:#fff;border-color:#ccc;}
+._2WP2O ._3ijoZ{fill:#777;}
+._2WP2O:hover{color:rgba(0,0,0,0);background-color:#fff;border-color:#ec561a;}
+._2WP2O:hover ._3ijoZ{fill:#777;}
+._2WP2O:active{color:rgba(0,0,0,0);border-color:#cb1000;outline:none;background:#ec561a;}
+._2WP2O:active ._3ijoZ{fill:#fff;}
+._2ZoPo{height:38px;width:38px;}
+
+
+* {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #dedede33;
+}
+
+#pod {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    width: 85%;
+    margin-top: 50px;
+    margin-left: 8.5%;
+}
+
+hr {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 2;
+    color: #666;
+    opacity: 0.2;
+    text-shadow: 1px 1px 0px white;
+    margin: 20px 0px;
+    border: none;
+    border-bottom: 1px solid #666;
+    position: relative;
+    transition: box-shadow 200ms ease-in-out;
+    box-shadow: 0px 0px 0px 0px #f9f9f9;
+    /*width: 10.3125%;*/
+}
+
+
 h2 {
     margin-top: 35px;
     margin-bottom: 15px;
 }
+
+#progressStatus {
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.hiddenExtendedKeyboard {
+    display: none;
+}
+
+
+@media screen and (max-width: 585px) {
+    .extraInputOption {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wolframLogo {
+        transform: scale(0.75);
+    }
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
