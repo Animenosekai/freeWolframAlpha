@@ -21,7 +21,7 @@ const appid = [
     '2557YT-52JEY65G9K',
 ]
 
-const corsProxy = 'https://lin2jing4-cors.herokuapp.com/'
+const corsProxy = 'https://cors-anywhere.herokuapp.com/'
 
 const fixedEncodeURIComponent = str => 
     encodeURIComponent(str)
