@@ -21,12 +21,7 @@ const appid = [
     '2557YT-52JEY65G9K',
 ]
 
-const corsProxy = 'https://lin2jing4-cors.herokuapp.com/'
-
-const fixedEncodeURIComponent = str => 
-    encodeURIComponent(str)
-    .replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16))
-
+function EncodeURI(value) { return encodeURIComponent(value).replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16)) }
 
 function goHome() {
     fetch(('/home.html'))
@@ -61,47 +56,41 @@ window.onhashchange()
 
 equationForm.onsubmit = async event => {
     //details.open = false
-    if (event)
+    if (event) {
         event.preventDefault()
-    progressBar.hidden = false
-    const url =
-    `
-        ${corsProxy} api.wolframalpha.com/v2/query?
-        &appid = ${appid[Date.now() % appid.length]}
-        &input = ${location.hash = fixedEncodeURIComponent(equationInput.value)}
-        &podstate = Step-by-step+solution
-        &podstate = Step-by-step
-        &podstate = Show+all+steps
-        &scantimeout = 20
-    `
-    const response = await fetch(url.replace(/ /g, ''))
-    const xml = await response.text()
-    xmlDownloadStore = xml
-    equationStore = equationInput.value
-    progressBar.hidden = true
-    if (xmlDownloadStore.includes('input parameter not present in query')) {
-        goHome()
-    } else {
-        pod.innerHTML = xml.replace(/plaintext/g, 'pre')
-                        .replace(/<pod title../g, '<h2>')
-                        .replace(/.......scanner/gs, '</h2><!')
-        document.getElementById('equationFooter').style.display = "block"
-        Array.prototype.slice.call(document.getElementsByTagName('pre')).forEach(
-            function(item) {
-                item.replaceWith(document.createElement("hr"))
-                item.remove();
-                // or item.parentNode.removeChild(item); for older browsers (Edge-)
-            });
-        pod.querySelector('h2').style.marginTop = "10px"
-        var HRs = pod.querySelectorAll('hr')
-        HRs[HRs.length - 1].remove()
-        title.innerText = equationInput.value + " - Wolfram|Alpha"
     }
+    progressBar.hidden = false
+    location.hash = EncodeURI(equationInput.value)
+    let url = "https://animenosekai.herokuapp.com/freeWolframAlpha/api/query?appID=" + appid[Date.now() % appid.length] + "&question=" + EncodeURI(equationInput.value)
+    let response = await 
+    fetch(url.replace(/ /g, ''))
+    .then((resp) => resp.text())
+    .then(function(xml) {
+        xmlDownloadStore = xml
+        equationStore = equationInput.value
+        progressBar.hidden = true
+        if (xmlDownloadStore.includes('input parameter not present in query')) {
+            goHome()
+        } else {
+            pod.innerHTML = xml.replace(/plaintext/g, 'pre').replace(/<pod title../g, '<h2>').replace(/.......scanner/gs, '</h2><!')
+            document.getElementById('equationFooter').style.display = "block"
+            Array.prototype.slice.call(document.getElementsByTagName('pre')).forEach(
+                function(item) {
+                    item.replaceWith(document.createElement("hr"))
+                    item.remove();
+                    // or item.parentNode.removeChild(item); for older browsers (Edge-)
+                }
+            );
+            pod.querySelector('h2').style.marginTop = "10px"
+            var HRs = pod.querySelectorAll('hr')
+            HRs[HRs.length - 1].remove()
+            title.innerText = equationInput.value + " - Wolfram|Alpha"
+        }
+    })
 }
 
 if (equationInput.value)
     equationForm.onsubmit()
-
 
 function download() {
     var element = document.createElement('a');
