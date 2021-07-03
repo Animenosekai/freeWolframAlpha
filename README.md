@@ -18,4 +18,9 @@
 - Skeleton Loading
 - "Did you mean", "Image Source" and "Definition" support
 
+
+## Backend
+
+Check out the serverless backend at [Animenosekai/freewolframalpha-api](https://github.com/Animenosekai/freewolframalpha-api)
+
 > © Anime no Sekai — 2021 ✨
