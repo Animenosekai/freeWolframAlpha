@@ -12,9 +12,9 @@ const TIMEOUT = 3
 async function hashChange() {
     equationInput.focus()
     equationInput.value = decodeURIComponent(location.hash.slice(1))
-    document.getElementById("inputOutput").innerText = decodeURIComponent(location.hash.slice(1))
+    //document.getElementById("inputOutput").innerText = decodeURIComponent(location.hash.slice(1))
     if (decodeURIComponent(location.hash.slice(1)).replace(" ", '') == "") {
-        document.getElementById("inputOutput").innerText = "Enter what you want to calculate or know about"
+        //document.getElementById("inputOutput").innerText = "Enter what you want to calculate or know about"
         goHome()
     }
 }
@@ -515,16 +515,17 @@ async function download() {
 
 async function addSpecial(specialCharButton) {
     equationInput.value = equationInput.value + specialCharButton.getAttribute("value")
-    document.getElementById("inputOutput").innerText = equationInput.value
+    //document.getElementById("inputOutput").innerText = equationInput.value
 }
 
-
+/*
 async function addInput() {
     document.getElementById("inputOutput").innerText = document.getElementById("equationInput").value
     if (equationInput.value.replace(" ", '') == "") {
         document.getElementById("inputOutput").innerText = "Enter what you want to calculate or know about"
     }
 }
+*/
 
 function encode(value) {
     return encodeURIComponent(String(value)).replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16))

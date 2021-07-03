@@ -1,9 +1,9 @@
 async function hashChange() {
     equationInput.focus()
     equationInput.value = decodeURIComponent(location.hash.slice(1))
-    document.getElementById("inputOutput").innerText = decodeURIComponent(location.hash.slice(1))
+    //document.getElementById("inputOutput").innerText = decodeURIComponent(location.hash.slice(1))
     if (decodeURIComponent(location.hash.slice(1)).replace(" ", '') == "") {
-        document.getElementById("inputOutput").innerText = "Enter what you want to calculate or know about"
+        //document.getElementById("inputOutput").innerText = "Enter what you want to calculate or know about"
         goHome()
     }
 }

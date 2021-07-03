@@ -1,3 +1,5 @@
+![Wolfram|Alpha Logo](wolframalpha.svg)
+
 # [free](https://freewolframalpha.netlify.app)WolframAlpha
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d439259f-b5ed-4575-990c-52b871b45b41/deploy-status)](https://app.netlify.com/sites/freewolframalpha/deploys)
@@ -17,7 +19,6 @@
 - Query Autocomplete
 - Skeleton Loading
 - "Did you mean", "Image Source" and "Definition" support
-
 
 ## Backend
 

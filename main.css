@@ -178,11 +178,17 @@ input {
     height: 38px;
     min-width: 100%;
     padding: 8px 5px;
-    text-align: left;
     outline: none;
-    color: transparent;
     caret-color: #333;
-    font: 16px/1.38 WebRoboto, "Hiragino Kaku Gothic ProN", "\30D2\30E9\30AE\30CE\89D2\30B4   ProN", Meiryo, メイリオ, Arial, Helvetica, sans-serif
+    font-family: WebRoboto,"Hiragino Kaku Gothic ProN","\30D2\30E9\30AE\30CE\89D2\30B4   ProN",Meiryo,メイリオ,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.38;
+
+    white-space: nowrap;
+    color: #333;
+    text-align: left;
+    letter-spacing: normal;
+    font-weight: 500;
 }
 
 .wolfram-input-class:hover {
