@@ -47,4 +47,5 @@ async function createSkeleton() {
 
     document.getElementById("pod").innerHTML = ""
     document.getElementById("pod").appendChild(newElem)
+    document.getElementById("pod-height").style.height = document.getElementById("pod").offsetHeight + 50 + "px"
 }
