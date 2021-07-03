@@ -903,18 +903,6 @@ body {
     transform: translateX(-50%);
 }
 
-@media screen and (max-width: 830px) {
-    #pod {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 610px) {
-    #pod {
-        width: 100%;
-    }
-}
-
 hr {
     color: #666;
     opacity: .2;
@@ -1248,4 +1236,19 @@ tip::before {
 
 tip:hover {
     opacity: .8;
+}
+
+
+@media screen and (max-width: 830px) {
+    relatedqueries,
+    #pod {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    relatedqueries,
+    #pod {
+        width: 100%;
+    }
 }
