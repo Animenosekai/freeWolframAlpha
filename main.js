@@ -86,7 +86,7 @@ async function inputSubmit() {
             timeout: String(TIMEOUT)
         }))
         .then((xml) => {
-            if (xml) {
+            if (xml) {
                 if (states.currentEquation == equationNumber) {
                     store.xml = xml
                     store.equation = document.getElementById("equationInput").value
@@ -97,18 +97,18 @@ async function inputSubmit() {
                         document.getElementById("pod").innerHTML = xml.replace(/plaintext/g, 'pre').replace(/<pod title../g, '<h2>').replace(/.......scanner/gs, '</h2><!')
                         parse()
                         title.innerText = equationInput.value + " - Wolfram|Alpha"
-    
+
                         if (document.querySelector("didyoumeans")) {
                             document.querySelector("didyoumeans").lastElementChild.style.marginBottom = "20px"
                             document.querySelectorAll("didyoumean").forEach((item) => {
                                 item.setAttribute("onclick", "document.getElementById('equationInput').value = this.innerText; inputSubmit();")
                             })
                         }
-    
+
                         if (document.querySelector("tips")) {
                             document.querySelector("tips").lastElementChild.style.marginBottom = "20px"
                         }
-    
+
                         // related queries
                         if (document.getElementById("pod").querySelector("queryresult").getAttribute("related") != "") {
                             url = new URL(document.getElementById("pod").querySelector("queryresult").getAttribute("related"))
@@ -134,7 +134,7 @@ async function inputSubmit() {
                                     }
                                 })
                         }
-    
+
                         // WolframAlpha's "lazy" loading of queryresult
                         if (document.getElementById("pod").querySelector("queryresult").getAttribute("recalculate") != "") {
                             url = new URL(document.getElementById("pod").querySelector("queryresult").getAttribute("recalculate"))
@@ -149,7 +149,7 @@ async function inputSubmit() {
                                         tempElem.innerHTML = response.replace(/plaintext/g, 'pre').replace(/<pod title../g, '<h2>').replace(/.......scanner/gs, '</h2><!') // same stuff as above
                                         document.getElementById("pod").querySelector("queryresult").innerHTML += tempElem.querySelector("queryresult").innerHTML
                                         parse() // reparse everything to format
-    
+
                                         // retry once more, just to be sure
                                         if (tempElem.querySelector("queryresult").getAttribute("recalculate") != "") {
                                             url = new URL(tempElem.querySelector("queryresult").getAttribute("recalculate"))
@@ -329,7 +329,7 @@ async function createSkeleton() {
     let newSubPod = document.createElement("subpod")
     newSubPod.style.height = "25px"
     newElem.appendChild(newSubPod)
-    
+
     newHeader = document.createElement("h2")
     newHeader.classList.add("pod-header")
     newHeader.classList.add("skeleton-box")
@@ -337,7 +337,7 @@ async function createSkeleton() {
     newSubPod = document.createElement("subpod")
     newSubPod.style.height = "150px"
     newElem.appendChild(newSubPod)
-    
+
     newHeader = document.createElement("h2")
     newHeader.classList.add("pod-header")
     newHeader.classList.add("skeleton-box")
@@ -345,7 +345,7 @@ async function createSkeleton() {
     newSubPod = document.createElement("subpod")
     newSubPod.style.height = "35px"
     newElem.appendChild(newSubPod)
-    
+
     newHeader = document.createElement("h2")
     newHeader.classList.add("pod-header")
     newHeader.classList.add("skeleton-box")
@@ -364,7 +364,7 @@ async function createSkeleton() {
         newSubPod.style.height = (Math.random() * 200 + 15).toString() + "px"
         newElem.appendChild(newSubPod)
     }
-    
+
 
     document.getElementById("pod").innerHTML = ""
     document.getElementById("pod").appendChild(newElem)
@@ -463,7 +463,9 @@ function createAutocompleteElement(complete, query) {
 }
 
 async function autocomplete() {
-    result = await request(AUTOCOMPLETE_URL.format({question: encode(document.getElementById("equationInput").value)}))
+    result = await request(AUTOCOMPLETE_URL.format({
+        question: encode(document.getElementById("equationInput").value)
+    }))
     if (result) {
         let newAutocompleteList = document.createElement("ul")
         newAutocompleteList.classList.add("autocomplete-list")
@@ -530,5 +532,3 @@ async function addInput() {
 function encode(value) {
     return encodeURIComponent(String(value)).replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16))
 }
-
-

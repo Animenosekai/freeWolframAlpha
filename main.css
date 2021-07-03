@@ -180,7 +180,7 @@ input {
     padding: 8px 5px;
     outline: none;
     caret-color: #333;
-    font-family: WebRoboto,"Hiragino Kaku Gothic ProN","\30D2\30E9\30AE\30CE\89D2\30B4   ProN",Meiryo,メイリオ,Arial,Helvetica,sans-serif;
+    font-family: WebRoboto, "Hiragino Kaku Gothic ProN", "\30D2\30E9\30AE\30CE\89D2\30B4   ProN", Meiryo, メイリオ, Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.38;
 
@@ -1246,6 +1246,7 @@ tip:hover {
 
 
 @media screen and (max-width: 830px) {
+
     relatedqueries,
     #pod {
         width: 90%;
@@ -1253,6 +1254,7 @@ tip:hover {
 }
 
 @media screen and (max-width: 610px) {
+
     relatedqueries,
     #pod {
         width: 100%;
