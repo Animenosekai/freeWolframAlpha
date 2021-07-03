@@ -66,10 +66,12 @@ async function inputSubmit() {
         goHome();
         return;
     }
-    document.getElementById("equationInput").blur()
     window.location.hash = encode(document.getElementById("equationInput").value)
     states.currentEquation++;
     let equationNumber = states.currentEquation
+    document.getElementById("equationInput").focus()
+    document.getElementById("equationInput").blur()
+    document.querySelector("title").innerText = document.getElementById("equationInput").value + " - Wolfram|Alpha"
     request(QUERY_URL.format({
             question: encode(document.getElementById("equationInput").value),
             timeout: String(TIMEOUT)
@@ -85,7 +87,6 @@ async function inputSubmit() {
                         states.home = false
                         document.getElementById("pod").innerHTML = xml.replace(/plaintext/g, 'pre').replace(/<pod title../g, '<h2>').replace(/.......scanner/gs, '</h2><!')
                         parse()
-                        title.innerText = equationInput.value + " - Wolfram|Alpha"
     
                         if (document.querySelector("didyoumeans")) {
                             document.querySelector("didyoumeans").lastElementChild.style.marginBottom = "20px"
