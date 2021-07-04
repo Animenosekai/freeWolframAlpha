@@ -1260,3 +1260,7 @@ tip:hover {
         width: 100%;
     }
 }
+
+.unload {
+    display: none;
+}

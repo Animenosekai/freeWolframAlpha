@@ -55,6 +55,16 @@ function parse() {
             console.log(item)
         }
     });
+    document.getElementById("pod").querySelectorAll("imagesource").forEach((item) => {
+        try {
+            item.parentNode.querySelector("img").setAttribute("source-forward", item.innerText)
+            item.parentNode.querySelector("img").setAttribute("onclick", "window.open(this.getAttribute('source-forward'), '_blank')")
+            item.classList.add("unload")
+        } catch {
+            console.warn("An error occured while setting link for the following item")
+            console.log(item)
+        }
+    });
     document.getElementById("pod-height").style.height = document.getElementById("pod").offsetHeight + 50 + "px"
     document.getElementById('equationFooter').style.display = "block"
 }
