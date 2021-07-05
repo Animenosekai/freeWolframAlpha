@@ -1,6 +1,6 @@
 /* constants.js */
 
-const QUERY_URL = "https://freewolframalpha-api.vercel.app/query?question={question}&timeout={timeout}"
+const QUERY_URL = "https://freewolframalpha-api.vercel.app/query?question={question}&timeout={timeout}&podstate={podstate}"
 const AUTOCOMPLETE_URL = "https://freewolframalpha-api.vercel.app/autocomplete?question={question}"
 const RECALCULATION_URL = "https://freewolframalpha-api.vercel.app/recalculate?domain={domain}&id={id}"
 const RELATEDQUERIES_URL = "https://freewolframalpha-api.vercel.app/related?domain={domain}&id={id}"
@@ -20,6 +20,55 @@ async function hashChange() {
 }
 
 function parse() {
+    document.querySelectorAll("dropdown > option").forEach((item) => {
+        try {
+            item.remove()
+        } catch {
+            console.warn("An error occured while removing the stray option:", item)
+        }
+    })
+    document.querySelectorAll("dropdown").forEach((item) => {
+        try {
+            while (item.previousElementSibling.tagName != "H2")
+                item.parentNode.insertBefore(item, item.previousElementSibling)
+            item.previousElementSibling.append(item)
+        } catch {
+            console.warn("An error occured while moving the drop-down menu right next to the nearest heading:", item)
+        }
+    })
+    document.querySelectorAll("option").forEach((item) => {
+        try {
+            item.text = item.getAttribute("name")
+        } catch {
+            console.warn("An error occured while extracting the names of all available options:", item)
+        }
+    })
+    document.querySelectorAll("select").forEach((item) => {
+        try {
+            item.value = item.getAttribute("value")
+        } catch {
+            console.warn("An error occured while extracting the currently selected option name:", item)
+        }
+    })
+    document.querySelectorAll("select").forEach((item) => {
+        try {
+            item.style = `
+                background: white;
+                color: orangered;
+                border: thin solid darkorange;
+                border-radius: .5em;
+            `
+        } catch {
+            console.warn("An error occured while styling the drop-down menu:", item)
+        }
+    })
+    document.querySelectorAll("select").forEach((item) => {
+        try {
+            item.onchange = () => inputSubmit(item.value)
+        } catch {
+            console.warn("An error occured. The selected changes to the following drop-down menus will not send requests for status update properly:", item)
+        }
+    })
     Array.prototype.slice.call(document.getElementsByTagName('pre')).forEach((item) => {
         try {
             item.remove();
@@ -69,7 +118,7 @@ function parse() {
     document.getElementById('equationFooter').style.display = "block"
 }
 
-async function inputSubmit() {
+async function inputSubmit(podstate) {
     try {
         document.querySelectorAll("relatedqueries").forEach((item) => {
             item.remove()
@@ -94,6 +143,7 @@ async function inputSubmit() {
     document.getElementById("equationInput").blur()
     document.querySelector("title").innerText = document.getElementById("equationInput").value + " - Wolfram|Alpha"
     request(QUERY_URL.format({
+            podstate: podstate,
             question: encode(document.getElementById("equationInput").value),
             timeout: String(TIMEOUT)
         }))
@@ -106,7 +156,7 @@ async function inputSubmit() {
                         goHome()
                     } else {
                         states.home = false
-                        document.getElementById("pod").innerHTML = xml.replace(/plaintext/g, 'pre').replace(/<pod title../g, '<h2>').replace(/.......scanner/gs, '</h2><!')
+                        document.getElementById("pod").innerHTML = xml.replace(/plaintext/g, 'pre').replace(/<pod title../g, '<h2>').replace(/.......scanner/gs, '</h2><!').replace(/statelist/g, 'select').replace(/states/g, 'dropdown').replace(/state/g, 'option')
                         parse()
 
                         if (document.querySelector("didyoumeans")) {
